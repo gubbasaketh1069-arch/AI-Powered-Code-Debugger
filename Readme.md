@@ -1,3 +1,2 @@
-# AI-Powered Code Debugger
-
-A console-based intelligent debugging system using C++, Gemini API, libcurl, and GCC automation.
+# AI-Powered-Code-Debugger
+AI-powered C++ debugging system that performs static analysis, queries Gemini API for fixes, patches buggy C code, recompiles with GCC, and generates debugging reports.
