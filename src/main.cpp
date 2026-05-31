@@ -2,66 +2,63 @@
 
 using namespace std;
 
-int main()
+void showMenu()
 {
-    bool compilationSuccess = false;
-
-    cout << "======================================" << endl;
+    cout << "\n======================================" << endl;
     cout << "      AI-Powered Code Debugger" << endl;
     cout << "======================================" << endl;
 
-    cout << "\nStarting Debugging Process...\n" << endl;
+    cout << "1. Load Source File" << endl;
+    cout << "2. Run Static Analysis" << endl;
+    cout << "3. Query Gemini AI" << endl;
+    cout << "4. Compile Code" << endl;
+    cout << "5. Generate Report" << endl;
+    cout << "6. Exit" << endl;
 
-    // Retry loop (Maximum 3 attempts)
-    for(int attempt = 1; attempt <= 3; attempt++)
+    cout << "======================================" << endl;
+    cout << "Enter your choice: ";
+}
+
+int main()
+{
+    int choice;
+
+    do
     {
-        cout << "======================================" << endl;
-        cout << "Attempt Number: " << attempt << endl;
-        cout << "======================================" << endl;
+        showMenu();
+        cin >> choice;
 
-        // Step 1
-        cout << "\n[1] Loading source file..." << endl;
-
-        // Step 2
-        cout << "[2] Running static analysis..." << endl;
-
-        // Step 3
-        cout << "[3] Sending code to Gemini AI..." << endl;
-
-        // Step 4
-        cout << "[4] Receiving AI-generated fix..." << endl;
-
-        // Step 5
-        cout << "[5] Applying suggested patch..." << endl;
-
-        // Step 6
-        cout << "[6] Compiling updated code..." << endl;
-
-        // Temporary simulation
-        if(attempt == 3)
+        switch(choice)
         {
-            compilationSuccess = true;
+            case 1:
+                cout << "\n[INFO] Loading source file...\n";
+                break;
+
+            case 2:
+                cout << "\n[INFO] Running static analysis...\n";
+                break;
+
+            case 3:
+                cout << "\n[INFO] Sending code to Gemini AI...\n";
+                break;
+
+            case 4:
+                cout << "\n[INFO] Compiling updated code...\n";
+                break;
+
+            case 5:
+                cout << "\n[INFO] Generating debugging report...\n";
+                break;
+
+            case 6:
+                cout << "\nExiting AI-Powered Code Debugger...\n";
+                break;
+
+            default:
+                cout << "\nInvalid choice! Please try again.\n";
         }
 
-        // Success Condition
-        if(compilationSuccess)
-        {
-            cout << "\nCompilation Successful!" << endl;
-            cout << "Bug fixed successfully.\n" << endl;
-            break;
-        }
-        else
-        {
-            cout << "\nCompilation Failed!" << endl;
-            cout << "Retrying debugging process...\n" << endl;
-        }
-    }
-
-    cout << "======================================" << endl;
-    cout << "Generating Final Debugging Report..." << endl;
-    cout << "======================================" << endl;
-
-    cout << "\nSession Completed Successfully." << endl;
+    } while(choice != 6);
 
     return 0;
 }
