@@ -1,0 +1,1 @@
+Gemini API setup complete. Request execution will be added next.

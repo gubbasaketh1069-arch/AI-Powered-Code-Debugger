@@ -38,16 +38,45 @@ int main()
                 break;
 
             case 2:
-                cout << "\n[INFO] Running static analysis...\n";
-                break;
+{
+    string filename;
 
+    cout << "Enter file path: ";
+    cin >> filename;
+
+    analyzeFile(filename);
+
+    break;
+}
             case 3:
-                cout << "\n[INFO] Sending code to Gemini AI...\n";
-                break;
+{
+    cin.ignore();
 
-            case 4:
-                cout << "\n[INFO] Compiling updated code...\n";
-                break;
+    string code;
+
+    cout << "\nPaste your code snippet:\n";
+    getline(cin, code);
+
+    string suggestion = getAISuggestion(code);
+
+    cout << "\n===== GEMINI AI RESPONSE =====\n";
+    cout << suggestion << endl;
+
+    writeLog(suggestion);
+
+    break;
+}
+           case 4:
+{
+    string filename;
+
+    cout << "Enter file path: ";
+    cin >> filename;
+
+    compileFile(filename);
+
+    break;
+}
 
             case 5:
                 cout << "\n[INFO] Generating debugging report...\n";
