@@ -34,21 +34,66 @@ int main()
                 cout << "\n[INFO] Loading source file...\n";
                 break;
 
-            case 2:
-                cout << "\n[INFO] Running static analysis...\n";
-                break;
+           case 2:
+{
+    string filename;
 
-            case 3:
-                cout << "\n[INFO] Querying Gemini AI...\n";
-                break;
+    cout << "Enter file path: ";
+    cin >> filename;
 
-            case 4:
-                cout << "\n[INFO] Compiling code...\n";
-                break;
+    analyzeFile(filename);
 
-            case 5:
-                cout << "\n[INFO] Generating report...\n";
-                break;
+    writeLog("Static analysis completed for: " + filename);
+
+    break;
+}
+           case 3:
+{
+    string code;
+
+    cout << "Enter code snippet: ";
+    cin.ignore();
+
+    getline(cin, code);
+
+    string suggestion = getAISuggestion(code);
+
+    cout << "\nAI Suggestion:\n";
+    cout << suggestion << endl;
+    writeLog(suggestion);
+
+    cout << "\nSuggestion saved to logs/session_log.txt" << endl;
+
+    break;
+}
+          case 4:
+{
+    string filename;
+
+    cout << "Enter file path: ";
+    cin >> filename;
+
+    bool success = compileFile(filename);
+
+    if(success)
+    {
+        writeLog("Compilation Successful: " + filename);
+    }
+    else
+    {
+        writeLog("Compilation Failed: " + filename);
+    }
+
+    break;
+}
+case 5:
+{
+    cout << "\n===== DEBUGGING REPORT =====" << endl;
+    cout << "Check logs/session_log.txt" << endl;
+    cout << "All analyzer, AI, and compiler results are stored there." << endl;
+
+    break;
+}
 
             case 6:
                 cout << "\nExiting AI-Powered Code Debugger...\n";

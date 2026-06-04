@@ -1,28 +1,26 @@
+#include "../include/compiler.h"
+
 #include <iostream>
 #include <cstdlib>
 
 using namespace std;
 
-int main()
+bool compileFile(const string& filename)
 {
-    cout << "======================================" << endl;
-    cout << "        GCC Compilation Module" << endl;
-    cout << "======================================" << endl;
+    string command =
+        "g++ " + filename + " -o output.exe > compile_errors.txt 2>&1";
 
-    // Compile sample file
-    int result = system("g++ sample_codes/c1.cpp -o output");
+    int result = system(command.c_str());
 
-    // Check compilation result
     if(result == 0)
     {
         cout << "\nCompilation Successful!" << endl;
-        cout << "Executable file created successfully." << endl;
+        return true;
     }
     else
     {
         cout << "\nCompilation Failed!" << endl;
-        cout << "Errors detected in source code." << endl;
+        cout << "Check compile_errors.txt for details." << endl;
+        return false;
     }
-
-    return 0;
 }

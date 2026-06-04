@@ -1,5 +1,8 @@
 #include <iostream>
-
+#include "../include/analyzer.h"
+#include "../include/compiler.h"
+#include "../include/api.h"
+#include "../include/logger.h"
 using namespace std;
 
 void showMenu()
