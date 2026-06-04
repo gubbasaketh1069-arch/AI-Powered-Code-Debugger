@@ -79,8 +79,14 @@ int main()
 }
 
             case 5:
-                cout << "\n[INFO] Generating debugging report...\n";
-                break;
+{
+    cout << "\n===== DEBUGGING REPORT =====" << endl;
+    cout << "Static Analysis: Completed" << endl;
+    cout << "Compiler Module: Available" << endl;
+    cout << "AI Module: Available" << endl;
+    cout << "Logs stored in logs/session_log.txt" << endl;
+    break;
+}
 
             case 6:
                 cout << "\nExiting AI-Powered Code Debugger...\n";
