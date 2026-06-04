@@ -1,8 +1,0 @@
-You are a C++ debugging assistant.
-Analyze the following code and identify errors.
-
-cout << "Hello"
-
-Provide:
-1. Error description
-2. Suggested fix

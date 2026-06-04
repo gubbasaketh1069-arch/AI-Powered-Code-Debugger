@@ -4,3 +4,8 @@ compile_errors.txt
 compiler.exe
 debugger.exe
 main.exe
+*.exe
+prompt.txt
+request.json
+test.json
+response.json
